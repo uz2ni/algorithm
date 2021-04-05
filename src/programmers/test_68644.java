@@ -1,8 +1,6 @@
 package programmers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class test_68644 {
 	/*
@@ -10,16 +8,24 @@ public class test_68644 {
 	 */
 
 	public static void main(String[] args) {
-		//int[] numbers = {2,1,3,4,1};
-		int[] numbers = {5,0,2,7};
-		int[] result = solution(numbers);
+		long start = System.currentTimeMillis();
+
+		int[] numbers = {2,1,3,4,1,2,5,7,3,1,4,2};
+		//int[] numbers = {5,0,2,7};
+
+		int[] result = solution2(numbers);
 
 		for(int i=0; i<result.length; i++) {
 			System.out.print(result[i] + ", ");
 		}
 
+		long end = System.currentTimeMillis();
+
+		System.out.println( "실행 시간 : " + ( end - start )/1000.0 +"초"); //최종 실행시간
+
 	}
 
+	// ArrayList
 	public static int[] solution(int[] numbers) {
 		List<Integer> list = new ArrayList<>();
 
@@ -41,4 +47,29 @@ public class test_68644 {
 
 		return answer;
 	}
+
+	// TreeSet
+	// 장점 : 정렬하면서 set에 추가된다. 중복은 무시된다.
+	// 단점 : ArrayList 보다 실행 시간 느리다.
+	public static int[] solution2(int[] numbers) {
+		Set<Integer> list = new TreeSet<>();
+
+		for(int i=0; i<numbers.length; i++) {
+			for(int j=i+1; j<numbers.length; j++) {
+				list.add(numbers[i] + numbers[j]);
+			}
+		}
+
+		int[] result = new int[list.size()];
+		int cnt = 0;
+
+		Iterator<Integer> ir = list.iterator();
+		while(ir.hasNext()) {
+			result[cnt++] = ir.next();
+		}
+
+		return result;
+
+	}
+
 }
