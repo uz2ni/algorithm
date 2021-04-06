@@ -8,8 +8,14 @@ import java.util.Stack;
 public class test_64061 {
 
     public static void main(String[] args) {
-        int[][] board = {{0,0,0,0,0}, {0,0,1,0,3}, {0,2,5,0,1}, {4,2,4,4,2}, {3,5,1,3,1}};
+        int[][] board = {{0,0,0,0,0}
+                        ,{0,0,1,0,3}
+                        ,{0,2,5,0,1}
+                        ,{4,2,4,4,2}
+                        ,{3,5,1,3,1}};
+
         int[] moves = {1,5,3,5,1,2,1,4};
+        // 4, 3, 1, 1, 3, 2, 4
         System.out.println(solution(board, moves));
     }
 
@@ -26,15 +32,18 @@ public class test_64061 {
             for(int j=0; j<size; j++) {
                 int data = board[j][m];
                 if(data != 0) {
-                    // 선택된 값과 스택의 top값을 비교하여, 같으면 pop하고 answer+1 / 다르면 push
+                    board[j][m] = 0;
+
+                    // 선택된 값과 스택의 top값을 비교하여, 같으면 pop하고, 값 0만들고 , answer+1 / 다르면 push
                     if(stack.isEmpty()){
                         stack.push(data);
                     }else if(stack.peek() == data) {
                         stack.pop();
-                        answer++;
+                        answer += 2;
                     }else {
                         stack.push(data);
                     }
+
 
                     break;
                 }
