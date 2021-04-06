@@ -16,6 +16,7 @@ public class test_64061 {
 
         int[] moves = {1,5,3,5,1,2,1,4};
         // 4, 3, 1, 1, 3, 2, 4
+        // test
         System.out.println(solution(board, moves));
     }
 
