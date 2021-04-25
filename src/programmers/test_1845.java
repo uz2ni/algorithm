@@ -2,7 +2,6 @@ package programmers;
 
 import java.util.HashSet;
 import java.util.Set;
-
 /*
     폰켓몬
     nums 중 N/2 를 뽑는데 중복되지 않는 최대 갯수를 구해라.
