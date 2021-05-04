@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level1;
 
 public class test_12903 {
 	/*

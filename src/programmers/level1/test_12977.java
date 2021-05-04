@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level1;
 /*
     소수 만들기
  */

@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level1;
 
 public class test_72410 {
     public static void main(String[] args) {
