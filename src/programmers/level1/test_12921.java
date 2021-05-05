@@ -1,3 +1,5 @@
+package programmers.level1;
+
 public class test_12921 {
     public static void main(String[] args) {
         solution(30); // 4
