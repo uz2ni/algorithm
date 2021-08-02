@@ -4,7 +4,7 @@ package programmers.level2;
  */
 public class test_12899_X {
     public static void main(String[] args) {
-        System.out.println(solution(10));
+        System.out.println(solution(9));
     }
     static public String solution(int n) {
         String answer = "";
