@@ -1,8 +1,5 @@
 package programmers.level3;
 
-import apple.laf.JRSUIUtils;
-
-import java.sql.Array;
 import java.util.*;
 
 /*
