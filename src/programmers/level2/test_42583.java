@@ -29,7 +29,7 @@ public class test_42583 {
         }
 
         for (int truck : truck_weights) {
-            while (!bridgeQueue.isEmpty()) {
+            while (true) {
                 totalWeight -= bridgeQueue.poll(); // 다리에서 트럭을 하나 빼고
 
                 time++; // 시간 증가
