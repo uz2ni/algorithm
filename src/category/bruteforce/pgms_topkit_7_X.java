@@ -6,7 +6,7 @@ import java.util.List;
 /** 84512
  * 코딩테스트 연습 > 완전탐색 > 모음사전
  */
-public class pgms_topkit_7 {
+public class pgms_topkit_7_X {
 
     static List<String> list;
     static String[] words = {"A", "E", "I", "O", "U"};
