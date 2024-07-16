@@ -1,4 +1,4 @@
-package category.bruteforce;
+package programmers.topkit.bruteforce;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /** 84512
  * 코딩테스트 연습 > 완전탐색 > 모음사전
  */
-public class pgms_topkit_7_X {
+public class test7 {
 
     static List<String> list;
     static String[] words = {"A", "E", "I", "O", "U"};
