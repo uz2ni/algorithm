@@ -4,9 +4,9 @@ import java.io.*;
 import java.util.stream.Stream;
 
 /**
- * [구름] LV2. 구름 다리
+ * [구름] LV2. 구름 다리(스택) - 미완료
  */
-public class CloudBridge {
+public class CloudBridge_X {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
