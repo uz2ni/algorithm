@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Part3. 필수 자료구조 > 1. 무료행사(1)
+ * Part3. 필수 자료구조 > 1. 무료행사
  */
 public class Part3Test1 {
 
