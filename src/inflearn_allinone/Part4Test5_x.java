@@ -5,7 +5,7 @@ import java.lang.Math;
 /**
  * 태어난김에 세계일주1
  */
-public class Part5Test5_x {
+public class Part4Test5_x {
 
     static int maxCount = 0;
 
