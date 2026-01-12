@@ -5,14 +5,16 @@ import java.util.*;
 /**
  * 홍팀청팀
  */
-public class Parr5Test4_x {
+public class Part5Test4_x {
 
     public static void main(String[] args) {
 
-         int[][] friends = {{1},{2},{0}};
-//        int[][] friends = {{1,2},{0,3},{0},{1}};
+//         int[][] friends = {{1},{2},{0}}; // false
+        int[][] friends = {{1,2},{0,3},{0},{1}}; // true
 
+        // System.out.println(solutionFail2(friends));
         System.out.println(solution(friends));
+
     }
 
     public static boolean solution(int[][] friends) {
@@ -23,6 +25,21 @@ public class Parr5Test4_x {
             if(visited[i] == -1) {
                 visited[i] = 0;
                 if(!dfs(i,friends,visited)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean solution2(int[][] friends) {
+        int[] visited = new int[friends.length];
+        Arrays.fill(visited, -1);
+
+        for(int i=0; i<friends.length; i++) {
+            if(visited[i] == -1) {
+                if(!bfs(i,friends,visited)) {
                     return false;
                 }
             }
@@ -79,7 +96,7 @@ public class Parr5Test4_x {
     }
 
     // 시간초과
-    public static boolean bfsFail2(int start, int[][] friends, int[] visited) {
+    public static boolean bfs(int start, int[][] friends, int[] visited) {
         Queue<Integer> q = new ArrayDeque<>();
         q.offer(start);
         visited[start] = 1;
