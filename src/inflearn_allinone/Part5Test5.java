@@ -6,6 +6,7 @@ import java.util.Queue;
 /**
  * 잔돈교환2
  * 놓친 포인트: amount+1 만큼 visited 배열 만들어서 방문 처리
+ * 잔돈 별 visited 체크 이유: 그 잔돈까지의 최단거리는 현재시점. 이후에는 최단일 수 없기 때문에 거르기 위해
  */
 public class Part5Test5 {
 
