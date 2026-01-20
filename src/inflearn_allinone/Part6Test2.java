@@ -33,8 +33,10 @@ public class Part6Test2 {
     }
 
     public static int bfs(int[][] city, int r, int c, boolean[][] visited) {
+        int w = city[0].length;
+        int h = city.length;
 
-        if(city[r][c] == 1) return -1;
+        if((city[r][c] == 1) || (city[h-1][w-1] == 1)) return -1;
 
         Queue<int[]> q = new ArrayDeque<>();
         q.offer(new int[]{r,c,1});
@@ -42,8 +44,6 @@ public class Part6Test2 {
 
         int[] dr = {-1, 1, 0, 0, -1, -1, 1, 1};
         int[] dc = {0, 0, -1, 1, -1, 1, -1, 1};
-        int w = city[0].length;
-        int h = city.length;
 
         while(!q.isEmpty()) {
             int[] cur = q.poll();
