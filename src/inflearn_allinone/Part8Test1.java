@@ -14,7 +14,7 @@ public class Part8Test1 {
 
         List<Edge> list1 = new ArrayList<>();
         list1.add(new Edge(2,2));
-        list1.add(new Edge(4,1));
+        list1.add(new Edge(1,4));
         graph.put(1, list1);
 
         List<Edge> list2 = new ArrayList<>();
@@ -64,7 +64,8 @@ public class Part8Test1 {
         int[] distance = new int[graph.size()+1];
         Arrays.fill(distance, max);
 
-        Queue<Entry> q = new ArrayDeque<>();
+
+        Queue<Entry> q = new PriorityQueue<>();
         q.offer(new Entry(0,start));
         distance[start] = 0;
 
@@ -85,7 +86,7 @@ public class Part8Test1 {
         return distance[end];
     }
 
-    public static class Entry {
+    public static class Entry implements Comparable<Entry> {
 
         private int distance;
         private int node;
@@ -93,6 +94,11 @@ public class Part8Test1 {
         public Entry(int distance, int node) {
             this.distance = distance;
             this.node = node;
+        }
+
+        @Override
+        public int compareTo(Entry o) {
+            return this.distance-o.distance;
         }
     }
 
