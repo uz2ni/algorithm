@@ -30,7 +30,10 @@ public class Part8Test3 {
 
         // 노드 별 방문여부,이동길이 초기화
         Visit[] visit = new Visit[n+1];
-        Arrays.fill(visit, new Visit(false, Integer.MAX_VALUE));
+        for (int i = 0; i < visit.length; i++) {
+            visit[i] = new Visit(false, Integer.MAX_VALUE);
+        }
+
 
         // 시작 노드 큐에 넣기
         Queue<Entry> q = new PriorityQueue<>();
