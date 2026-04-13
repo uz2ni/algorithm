@@ -8,7 +8,7 @@ import java.util.*;
 public class Part8Test2 {
     public static void main(String[] args) {
         int nodesNum = 6;
-        int[][] edges = {
+        int[][] edges = { // [v, u] : u->v 방향을 가진 edge 나타냄
                 {1, 0}, {2, 1}, {3, 1}, {5, 2}, {5, 3}, {5, 4}
         };
         int[] order = solution(nodesNum, edges);
