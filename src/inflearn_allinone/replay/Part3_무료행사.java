@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 완전 탐색 > 두 요소의 합이 target인 인덱스 반환
  */
-public class Part3Test0 {
+public class Part3_무료행사 {
     public static void main(String[] args) {
         // solution1
         int[] nums = {7,1,2,3,6};
