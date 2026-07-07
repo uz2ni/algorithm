@@ -3,7 +3,7 @@ package inflearn_allinone.replay;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Part5_순열_X {
+public class Part4_순열_X {
     public static List<List<Integer>> answer;
     public static void main(String[] args) {
         int[] nums = {5,2,3,6,1};
