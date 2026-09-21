@@ -4,9 +4,9 @@ package leetcode;
 public class Rotate_Array_189 {
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6,7};
-        int k = 3;
-        rotate(nums, k);
+        int[] nums = {1,2,3,4,5,6,7,8,9,10,11,12};
+        int k = 16;
+        rotate2(nums, k);
 
         for(int i=0; i<nums.length; i++) {
             System.out.print(nums[i] + " ");
@@ -31,6 +31,25 @@ public class Rotate_Array_189 {
 
             left++;
             right--;
+        }
+    }
+
+    public static void rotate2(int[] nums, int k) {
+        int n = nums.length;
+        k %= n;
+
+        reverse2(nums, 0, n-1); // 전체 뒤집기
+        reverse2(nums, 0, k-1); // k 앞구간 뒤집기
+        reverse2(nums, k, n-1); // k 뒷구간 뒤집기
+    }
+
+    public static void reverse2(int[] nums, int start, int end) {
+        while(start < end) {
+            int temp = nums[end];
+            nums[end] = nums[start];
+            nums[start] = temp;
+            start++;
+            end--;
         }
     }
 }
