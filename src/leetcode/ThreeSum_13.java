@@ -8,7 +8,7 @@ import java.util.List;
  public class ThreeSum_13 {
 
     public static void main(String[] args) {
-        List<List<Integer>> results = threeSum(new int[]{-1,0,1,2,-1,-4});
+        List<List<Integer>> results = threeSum2(new int[]{-1,0,1,2,-1,-4});
         for(int i=0; i<results.size(); i++) {
             System.out.println(results.get(i).toString());
         }
@@ -53,5 +53,41 @@ import java.util.List;
         }
 
         return answer;
+    }
+
+    public static List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> answers = new ArrayList<>();
+        Arrays.sort(nums);
+
+        for(int i=0; i<nums.length-2; i++) { // 최소 뒤 2개 고를 수 있는 위치까지
+            if(nums[i] > 0) break; // 첫선택이 양수이면 뒤는 더 큰 수기 때문에 반전값이 나올 수 없음
+            if(i>0 && (nums[i-1] == nums[i])) continue; // 이전 값과 같으면 중복이라 생략
+
+            int target = -nums[i];
+            int left = i+1;
+            int right = nums.length-1;
+
+            while(left < right) {
+
+                int sum = nums[left] + nums[right];
+
+                if(sum == target) {
+
+                    answers.add(List.of(nums[i], nums[left], nums[right]));
+                    left++;
+                    right--;
+
+                    while(left<right && nums[left] == nums[left-1]) left++;
+                    while(left<right && nums[right] == nums[right+1]) right--;
+
+                }else if(target > sum) {
+                    left++;
+                }else {
+                    right--;
+                }
+            }
+        }
+
+        return answers;
     }
 }
